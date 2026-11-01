@@ -8,7 +8,7 @@ The project brings an interactive C programming environment to NumWorks, allowin
 
 **The app makes the calculator crash the first time you open it, (whatever, I couldn't fix it), so I'd recommend backing up important files.**
 
-# /!\ VIBE SLOPPED ALERT /!\
+## /!\ VIBE SLOPPED ALERT /!\
 **This README is entirely AI generated, and AI helped me a lot while making this project, particularly for small shitty bugs in the app or things I couldn't get over (it's not entirely vibecoded tho)**
 
 ## Features
@@ -20,6 +20,16 @@ The project brings an interactive C programming environment to NumWorks, allowin
 - **Multiple scripts:** manage up to five programs directly on the calculator.
 - **Standard library:** selected PicoC implementations of common C headers.
 
+## To-Do List
+(Things that would be nice to have but I'm not talented enough for)
+
+- Epsilon-like theme (this one is achieveable I think)
+
+- The ability to send and exchange files, just like python scripts
+
+- A toolbox with all usable libraries
+
+- Syntax highlighting
 
 ## Architecture
 
