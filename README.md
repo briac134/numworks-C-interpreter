@@ -107,21 +107,6 @@ make run
 
 Alternatively, upload the `.nwa` file through [my.numworks.com/apps](https://my.numworks.com/apps).
 
-## Project Status
-
-| Component | Status |
-|---|---|
-| PicoC interpreter integration | Implemented |
-| Desktop interpreter | Implemented |
-| Epsilon application | Implemented |
-| On-device code editor | Implemented |
-| Persistent script storage | Implemented |
-| Interactive `scanf()` input | Implemented |
-| Upsilon integration | Planned |
-| Expanded standard library | Planned |
-| Desktop compiler/import workflow | Planned |
-| Native ARM code generation | Not implemented |
-
 ## Limitations
 
 - C is interpreted directly on the calculator; programs are not compiled into native ARM code.
