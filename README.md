@@ -11,6 +11,8 @@ The project brings an interactive C programming environment to NumWorks, allowin
 ## /!\ VIBE SLOPPED ALERT /!\
 **This README is entirely AI generated, and AI helped me a lot while making this project, particularly for small shitty bugs in the app or things I couldn't get over (it's not entirely vibecoded tho)**
 
+My current goal is to make this project less and less AI generated. Currently, the estimated percentage of AI-written code in this project is 30–40%.
+
 ## Features
 
 - **C interpreter:** functions, arrays, pointers, structs, enums, loops, switch statements, and more.
