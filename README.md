@@ -226,3 +226,5 @@ external-app workflow. Rebuild and reinstall it when necessary.
   filesystem-link stubs required by `nwlink`.
 - `epsilon/src/simulator_stubs.cpp`: headless keyboard, display, and timing
   stubs used by the simulator target.
+# numworks-C-compiler
+PicoC port as an NWA app for Numworks 
