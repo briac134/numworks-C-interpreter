@@ -136,5 +136,5 @@ PicoC is included as a vendored dependency. Refer to its original repository for
 ## Third-party components
 
 - `epsilon/src/storage.c` and `epsilon/src/storage.h`:
-  Based on [NumWorks Extapp Storage](https://framagit.org/Yaya.Cout/numworks-extapp-storage)
+  From [NumWorks Extapp Storage](https://framagit.org/Yaya.Cout/numworks-extapp-storage)
   by Yaya-Cout, licensed under the MIT License.
