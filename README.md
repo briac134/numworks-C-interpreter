@@ -50,11 +50,6 @@ NumWorks Epsilon interface
    C program execution
 ```
 
-The codebase is designed to support multiple application environments:
-
-- **Epsilon:** current implementation, distributed as an `.nwa` application.
-- **Upsilon:** planned support through a separate application adapter.
-
 ## Build
 
 ### Requirements
@@ -86,7 +81,7 @@ cmake --build build
 ctest --test-dir build --output-on-failure
 ```
 
-### NumWorks (Epsilon)
+### Epsilon
 
 Requires the ARM toolchain and `nwlink`.
 
