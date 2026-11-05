@@ -25,13 +25,13 @@ My current goal is to make this project less and less AI generated. Currently, t
 ## To-Do List
 (Things that would be nice to have but I'm not talented enough for)
 
-- Epsilon-like theme (this one is achieveable I think)
+### - Epsilon-like theme (this one is achieveable I think)
+* Kinda made (color wise, not UI wise)
+### - The ability to send and exchange files, just like python scripts
+* Same (kinda made), but you need to follow the tutorial down there
+### - A toolbox with all usable libraries and useful functions to use
 
-- The ability to send and exchange files, just like python scripts
-
-- A toolbox with all usable libraries
-
-- Syntax highlighting
+### - Syntax highlighting
 
 ## Architecture
 
@@ -87,22 +87,51 @@ Requires the ARM toolchain and `nwlink`.
 
 ```sh
 cd epsilon
-make
+make PLATFORM=device
 ```
 
 The resulting application is:
 
 ```text
-epsilon/build/numworkscc.nwa
+epsilon/build/device/numworkscc.nwa
 ```
 
 To install it directly on a connected calculator:
 
 ```sh
-make run
+make PLATFORM=device run
 ```
 
 Alternatively, upload the `.nwa` file through [my.numworks.com/apps](https://my.numworks.com/apps).
+
+For a native, headless simulator build:
+
+```sh
+cd epsilon
+make clean
+make PLATFORM=simulator
+make PLATFORM=simulator run SIMULATOR=/path/to/epsilon.bin
+```
+
+This produces `epsilon/build/simulator/numworkscc.nwb`, a shared-library
+bundle loaded by Epsilon's simulator. The simulator executable itself is not
+included with `nwlink`; obtain/build Epsilon's `epsilon.bin` separately and
+pass its path through `SIMULATOR`. The project also includes a small
+keyboard/display shim in `epsilon/src/simulator_stubs.cpp` for the native
+bundle. The simulator is not hardware-accurate: persistent calculator storage
+and the physical display are not reproduced.
+
+## File Uploading
+* To do so, you will need to create a file named `file_to_convert.c` and place it in the same folder as the file `file_sender.py`.
+
+* Then you will need to execute the `file_sender.py` file, and you will end up with a `converted_file_to_paste.txt`
+
+* Next, delete the contents of `main.cpp`in the `epsilon` folder, from line 671 to line 692.
+
+* Then paste the contents of the converted file inside `main.cpp`  where we previously deleted code.
+
+* Finally, just save everything and do `make run` from the epsilon folder to flash on the calculator. 
+
 
 ## Limitations
 

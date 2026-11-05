@@ -23,12 +23,14 @@ extern const std::uint32_t eadk_api_level
 #endif
 
 namespace {
-constexpr eadk_color_t kBlack = 0x0000;
-constexpr eadk_color_t kWhite = 0xffff;
-constexpr eadk_color_t kGreen = 0x07e0;
+// The colors are messed up, I didn't want to replace every color names throughout the file
+// (The original theme was black and green, I replaced it with a more Numworks-like one)
+constexpr eadk_color_t kBlack = 0xf7be;
+constexpr eadk_color_t kWhite = 0x0000;
+constexpr eadk_color_t kGreen = 0xfda6;
 constexpr eadk_color_t kRed = 0xf800;
 constexpr std::size_t kMaxSource = 512;
-// EADK's small font is a fixed seven-pixel cell, matching the Python editor.
+
 constexpr std::uint16_t kCharacterWidth = 7;
 constexpr std::uint16_t kLineNumberX = 4;
 constexpr std::uint16_t kSourceX = 24;
@@ -507,7 +509,7 @@ void render_result(const nwcc::CompileResult &result) {
       draw("Runtime error", 8, kRed);
       draw(error, 35);
     } else {
-      draw("Output:", 8, kGreen);
+      draw("Output:", 8, kWhite);
       draw_output(output);
     }
   }
@@ -665,12 +667,31 @@ bool edit_script(std::size_t selected_script, std::string &source) {
 }
 } // namespace
 
+// main.c file inside the app
 int main() {
-  const std::string default_source = "int main(void) {\n"
-                                     "  int a = 2 + 3 * 4;\n"
-                                     "  printf(\"%d\\n\", a);\n"
+  const std::string default_source = "#include <stdio.h>\n"
+                                     "\n"
+                                     "int main(void) {\n"
+                                     "  int number;\n"
+                                     "  int total = 0;\n"
+                                     "\n"
+                                     "  printf(\"NumWorks C demo\\n\");\n"
+                                     "  printf(\"Enter a number: \");\n"
+                                     "\n"
+                                     "  if (scanf(\"%d\", &number) != 1) {\n"
+                                     "    printf(\"Invalid input\\n\");\n"
+                                     "    return 1;\n"
+                                     "  }\n"
+                                     "\n"
+                                     "  for (int i = 1; i <= number; i++) {\n"
+                                     "    total = total + i;\n"
+                                     "  }\n"
+                                     "\n"
+                                     "  printf(\"\\n\\nSum from 1 to %d= %d\\n\", number, total);\n"
                                      "  return 0;\n"
                                      "}\n";
+
+
   std::array<std::string, kScriptCount> names = {
       "main.c", "script2.c", "script3.c", "script4.c", "script5.c"};
   std::array<std::string, kScriptCount> sources;
